@@ -17,17 +17,18 @@ import {
   calculateRectangles,
   RNVCameraConsumer
 } from "react-native-vision"
+let downloadedModel
 
 export default class App extends Component {
   state = {
-    classifier: null
+    classifiers: null
   }
 
   componentDidMount() {
     // switch to async/await style
     (async () => {
       downloadedModel = await fetchModel("Food101")
-      this.setState({ classifier: downloadedModel })
+      this.setState({ classifiers: [downloadedModel] })
     })()
   }
 
@@ -35,6 +36,7 @@ export default class App extends Component {
     return (
       <RNVisionProvider
         isCameraFront={false}
+        // classifier={this.state.classifier}
         isStarted={true}
       >
         <SafeAreaView style={styles.container}>
@@ -49,24 +51,32 @@ export default class App extends Component {
                   // window.alert(data.regions && JSON.stringify(data.regions))
                   return data.regions
                   ? [
-                    // ...Object.keys(data.regions)
-                    //   .filter(k => {
-                    //     return k != "";
-                    //   })
-                    //   .map(k => {
-                    //     return (
-                          <RNVCameraRegion
-                            key={"bigPicture"}
-                            fromeDisposition="file"
-                            region={""}
-                            classifiers={this.state.classifier}
-                            >
-                              {regionInfo => {
-                                return <Text>hi</Text>
+                      <RNVCameraRegion
+                        key={"bigPicture"}
+                        fromeDisposition="file"
+                        region={""}
+                        classifiers={
+                          this.state.classifiers &&
+                          this.state.classifiers.map(url => {
+                            // automatically top confidence ordered
+                            return { url: url, max: 5 };
+                          })
+                        }
+                      >
+                          {regionInfo => {
+                            return <View
+                              style={{
+                                width: 400,
+                                height: 500,
+                                position: 'absolute',
+                                borderColor: 'blue',
+                                borderWidth: 5
                               }}
-                          </RNVCameraRegion>
-                      //   )
-                      // })
+                            >
+                              <Text>{regionInfo.classifications[downloadedModel] && regionInfo.classifications[downloadedModel][0].label}</Text>
+                            </View>
+                          }}
+                      </RNVCameraRegion>
                   ]
                   : null
                 }}
