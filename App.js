@@ -6,24 +6,21 @@
  * @flow
  */
 
-import React, {Component} from 'react'
-import {StyleSheet, Text, View, SafeAreaView} from 'react-native'
+import React, { Component } from "react"
+import { StyleSheet, Text, View, SafeAreaView } from "react-native"
 import fetchModel from "./fetchModel"
-import {
-  RNVCameraView,
-  RNVisionProvider,
-  RNVRegion
-} from "react-native-vision"
+import { RNVCameraView, RNVisionProvider, RNVRegion } from "react-native-vision"
+
 let downloadedModel
 
 export default class App extends Component {
   state = {
-    classifier: null
+    classifier: null,
   }
 
   componentDidMount() {
     // switch to async/await style
-    (async () => {
+    ;(async () => {
       downloadedModel = await fetchModel("Food101")
       this.setState({ classifier: downloadedModel })
     })()
@@ -34,17 +31,13 @@ export default class App extends Component {
       <RNVisionProvider isCameraFront={false} isStarted>
         <RNVRegion
           region=""
-          classifiers={
-            this.state.classifier && [{ url: this.state.classifier, max: 5 }]
-          }
+          classifiers={this.state.classifier && [{ url: this.state.classifier, max: 5 }]}
         >
           {({ classifications }) => {
             return (
               <SafeAreaView style={styles.container}>
                 <Text style={styles.welcome}>Food 101</Text>
-                <Text style={styles.explainer}>
-                  Point the camera at some food!
-                </Text>
+                <Text style={styles.explainer}>Point the camera at some food!</Text>
                 <View style={styles.cameraContainer}>
                   <RNVCameraView gravity="fill" style={styles.camera} />
                 </View>
@@ -54,7 +47,7 @@ export default class App extends Component {
                     : "Loading Model"}
                 </Text>
               </SafeAreaView>
-            );
+            )
           }}
         </RNVRegion>
       </RNVisionProvider>
@@ -64,34 +57,34 @@ export default class App extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'center',
-    backgroundColor: '#F5FCFF',
+    justifyContent: "center",
+    backgroundColor: "#F5FCFF",
   },
   welcome: {
     fontSize: 20,
-    textAlign: 'center',
+    textAlign: "center",
     margin: 10,
   },
   explainer: {
     alignSelf: "stretch",
-    textAlign: 'center',
-    width: "100%"
+    textAlign: "center",
+    width: "100%",
   },
   foodBlock: {
     padding: 20,
     fontSize: 20,
-    textAlign: 'center',
-    backgroundColor: '#333',
-    color: '#ccc'
+    textAlign: "center",
+    backgroundColor: "#333",
+    color: "#ccc",
   },
   camera: {
     flex: 1,
     borderWidth: 2,
-    borderColor: '#fee',
+    borderColor: "#fee",
     backgroundColor: "#111",
     overflow: "hidden",
   },
   cameraContainer: {
-    height: "80%"
-  }
+    height: "80%",
+  },
 })
