@@ -9,7 +9,7 @@
 import React, { Component } from "react"
 import { StyleSheet, Text, View, SafeAreaView } from "react-native"
 import fetchModel from "./fetchModel"
-import { RNVCameraView, RNVisionProvider, RNVRegion } from "react-native-vision"
+import { RNVCameraView, RNVisionProvider, RNVDefaultRegion } from "react-native-vision"
 
 let downloadedModel
 
@@ -29,10 +29,7 @@ export default class App extends Component {
   render() {
     return (
       <RNVisionProvider isCameraFront={false} isStarted>
-        <RNVRegion
-          region=""
-          classifiers={this.state.classifier && [{ url: this.state.classifier, max: 5 }]}
-        >
+        <RNVDefaultRegion classifiers={[{ url: this.state.classifier, max: 5 }]}>
           {({ classifications }) => {
             return (
               <SafeAreaView style={styles.container}>
@@ -49,7 +46,7 @@ export default class App extends Component {
               </SafeAreaView>
             )
           }}
-        </RNVRegion>
+        </RNVDefaultRegion>
       </RNVisionProvider>
     )
   }

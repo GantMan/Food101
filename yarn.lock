@@ -4238,9 +4238,9 @@ react-native-swift@^1.2.0, react-native-swift@^1.2.1:
     glob "^7.1.2"
     xcode rhdeck/cordova-node-xcode
 
-react-native-vision@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/react-native-vision/-/react-native-vision-1.1.2.tgz#d7a92acdf63c11ffd319e1608d3358f27fdf4842"
+react-native-vision@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-vision/-/react-native-vision-1.2.0.tgz#3a796bdde11f4d2918de4c380672514fab83202e"
   dependencies:
     react "^16.3.2"
     react-native-swift "^1.2.0"
