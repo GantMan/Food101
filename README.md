@@ -2,7 +2,7 @@
 
 Simply point the camera at a delicious dish and find out what food it is!
 
-Here's a terrible example with some Google images instead of real food.
+Hopefully a temporary GIF with some Google images instead of real food.
 ![Food101 App](./_art/video.gif)
 
 ## Warning
