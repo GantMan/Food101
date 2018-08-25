@@ -12,11 +12,7 @@ import fetchModel from "./fetchModel"
 import {
   RNVCameraView,
   RNVisionProvider,
-  RNVRegion,
-  RNVisionConsumer,
-  RNVCameraRegion,
-  calculateRectangles,
-  RNVCameraConsumer
+  RNVRegion
 } from "react-native-vision"
 let downloadedModel
 
