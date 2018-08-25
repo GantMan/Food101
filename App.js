@@ -12,6 +12,7 @@ import fetchModel from "./fetchModel"
 import {
   RNVCameraView,
   RNVisionProvider,
+  RNVRegion,
   RNVisionConsumer,
   RNVCameraRegion,
   calculateRectangles,
@@ -21,69 +22,45 @@ let downloadedModel
 
 export default class App extends Component {
   state = {
-    classifiers: null
+    classifier: null
   }
 
   componentDidMount() {
     // switch to async/await style
     (async () => {
       downloadedModel = await fetchModel("Food101")
-      this.setState({ classifiers: [downloadedModel] })
+      this.setState({ classifier: downloadedModel })
     })()
   }
 
   render() {
     return (
-      <RNVisionProvider
-        isCameraFront={false}
-        // classifier={this.state.classifier}
-        isStarted={true}
-      >
-        <SafeAreaView style={styles.container}>
-          <Text style={styles.welcome}>Food 101</Text>
-            <Text style={styles.explainer}>Point the camera at some food!</Text>
-            <View style={styles.cameraContainer}>
-              <RNVCameraView
-                gravity="fill"
-                style={styles.camera}
-              >
-                { data => {
-                  // window.alert(data.regions && JSON.stringify(data.regions))
-                  return data.regions
-                  ? [
-                      <RNVCameraRegion
-                        key={"bigPicture"}
-                        fromeDisposition="file"
-                        region={""}
-                        classifiers={
-                          this.state.classifiers &&
-                          this.state.classifiers.map(url => {
-                            // automatically top confidence ordered
-                            return { url: url, max: 5 };
-                          })
-                        }
-                      >
-                          {regionInfo => {
-                            return <View
-                              style={{
-                                width: 400,
-                                height: 500,
-                                position: 'absolute',
-                                borderColor: 'blue',
-                                borderWidth: 5
-                              }}
-                            >
-                              <Text>{regionInfo.classifications[downloadedModel] && regionInfo.classifications[downloadedModel][0].label}</Text>
-                            </View>
-                          }}
-                      </RNVCameraRegion>
-                  ]
-                  : null
-                }}
-              </RNVCameraView>
-            </View>
-            <Text style={styles.foodBlock}>No Food</Text>
-        </SafeAreaView>
+      <RNVisionProvider isCameraFront={false} isStarted>
+        <RNVRegion
+          region=""
+          classifiers={
+            this.state.classifier && [{ url: this.state.classifier, max: 5 }]
+          }
+        >
+          {({ classifications }) => {
+            return (
+              <SafeAreaView style={styles.container}>
+                <Text style={styles.welcome}>Food 101</Text>
+                <Text style={styles.explainer}>
+                  Point the camera at some food!
+                </Text>
+                <View style={styles.cameraContainer}>
+                  <RNVCameraView gravity="fill" style={styles.camera} />
+                </View>
+                <Text style={styles.foodBlock}>
+                  {classifications && classifications[this.state.classifier]
+                    ? classifications[this.state.classifier][0].label
+                    : "Loading Model"}
+                </Text>
+              </SafeAreaView>
+            );
+          }}
+        </RNVRegion>
       </RNVisionProvider>
     )
   }
