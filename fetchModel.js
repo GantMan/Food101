@@ -6,7 +6,8 @@ const fetchModel = async modelName => {
     return compiledPath
   }
 
-  const sourceURL = `https://s3-us-west-2.amazonaws.com/coreml-models/${modelName}.mlmodel`
+  const sourceURL = `https://s3.amazonaws.com/despiteallmyrage/${modelName}.mlmodel`
+  // const sourceURL = `https://s3-us-west-2.amazonaws.com/coreml-models/${modelName}.mlmodel`
   const toFile = RNFS.TemporaryDirectoryPath + modelName + ".mlmodel"
   const { promise, jobId } = RNFS.downloadFile({
     fromUrl: sourceURL,

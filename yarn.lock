@@ -4231,6 +4231,10 @@ react-native-fs@^2.11.15:
     base-64 "^0.1.0"
     utf8 "^2.1.1"
 
+react-native-identifier@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/react-native-identifier/-/react-native-identifier-0.4.2.tgz#dcc3f97ec82b8755528f2d8f70ac4b0f23a6af39"
+
 react-native-swift@^1.2.0, react-native-swift@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/react-native-swift/-/react-native-swift-1.2.1.tgz#422a0ea1ec5f02ecbb67dd8d3ea0c6a3f1d09829"
@@ -4238,9 +4242,9 @@ react-native-swift@^1.2.0, react-native-swift@^1.2.1:
     glob "^7.1.2"
     xcode rhdeck/cordova-node-xcode
 
-react-native-vision@^1.2.0:
+"react-native-vision@https://github.com/rhdeck/react-native-vision":
   version "1.2.0"
-  resolved "https://registry.yarnpkg.com/react-native-vision/-/react-native-vision-1.2.0.tgz#3a796bdde11f4d2918de4c380672514fab83202e"
+  resolved "https://github.com/rhdeck/react-native-vision#e8904ef04820752c1ce3d845aca9f2f4b3249a4e"
   dependencies:
     react "^16.3.2"
     react-native-swift "^1.2.0"

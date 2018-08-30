@@ -9,7 +9,8 @@
 import React, { Component } from "react"
 import { StyleSheet, Text, View, SafeAreaView } from "react-native"
 import fetchModel from "./fetchModel"
-import { RNVCameraView, RNVisionProvider, RNVDefaultRegion } from "react-native-vision"
+import { RNVCameraView, FacesProvider, Faces } from "react-native-vision"
+import { Identifier } from 'react-native-identifier'
 
 let downloadedModel
 
@@ -21,33 +22,46 @@ export default class App extends Component {
   componentDidMount() {
     // switch to async/await style
     ;(async () => {
-      downloadedModel = await fetchModel("Food101")
+      downloadedModel = await fetchModel("MegaNic50")
       this.setState({ classifier: downloadedModel })
     })()
   }
 
   render() {
     return (
-      <RNVisionProvider isCameraFront={false} isStarted>
-        <RNVDefaultRegion classifiers={[{ url: this.state.classifier, max: 5 }]}>
+      <FacesProvider isCameraFront={false} classifier={this.state.classifier}>
+        {/* <RNVDefaultRegion classifiers={[{ url: this.state.classifier, max: 5 }]}>
           {({ classifications }) => {
-            return (
+            return ( */}
               <SafeAreaView style={styles.container}>
                 <Text style={styles.welcome}>Food 101</Text>
                 <Text style={styles.explainer}>Point the camera at some food!</Text>
                 <View style={styles.cameraContainer}>
-                  <RNVCameraView gravity="fill" style={styles.camera} />
+                  <RNVCameraView gravity="fill" style={styles.camera} >
+                    <Faces>
+                      {({ face, style, faceConfidence, key }) => {
+                        return (
+                          <Identifier
+                            key={key}
+                            style={style}
+                            horizontal
+                            accuracy={face === 'nic' ? faceConfidence: 0}
+                          />
+                        )
+                      }}
+                    </Faces>
+                  </RNVCameraView>
                 </View>
-                <Text style={styles.foodBlock}>
+                {/* <Text style={styles.foodBlock}>
                   {classifications && classifications[this.state.classifier]
                     ? classifications[this.state.classifier][0].label
                     : "Loading Model"}
-                </Text>
+                </Text> */}
               </SafeAreaView>
             )
           }}
-        </RNVDefaultRegion>
-      </RNVisionProvider>
+        {/* </RNVDefaultRegion> */}
+      </FacesProvider>
     )
   }
 }
