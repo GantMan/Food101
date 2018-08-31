@@ -4231,9 +4231,9 @@ react-native-fs@^2.11.15:
     base-64 "^0.1.0"
     utf8 "^2.1.1"
 
-react-native-identifier@^0.4.2:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/react-native-identifier/-/react-native-identifier-0.4.2.tgz#dcc3f97ec82b8755528f2d8f70ac4b0f23a6af39"
+react-native-identifier@^0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/react-native-identifier/-/react-native-identifier-0.4.4.tgz#392c440aa5f5a899ba31db29a9c5171813547f09"
 
 react-native-swift@^1.2.0, react-native-swift@^1.2.1:
   version "1.2.1"

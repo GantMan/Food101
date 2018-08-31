@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "rebuild": "rm -rf node_modules && rm -rf ~/Library/Developer/Xcode/DerivedData/Food101* && rm -rf ios/build && rm -rf ~/.rncache && yarn && react-native fix-xcode"
   },
   "dependencies": {
     "@babel/core": "^7.0.0-beta.47",
@@ -14,7 +15,7 @@
     "react-native-camera-ios-enable": "^1.0.1",
     "react-native-coreml": "^1.2.0",
     "react-native-fs": "^2.11.15",
-    "react-native-identifier": "^0.4.2",
+    "react-native-identifier": "^0.4.4",
     "react-native-swift": "^1.2.1",
     "react-native-vision": "https://github.com/rhdeck/react-native-vision"
   },
