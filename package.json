@@ -15,7 +15,7 @@
     "react-native-camera-ios-enable": "^1.0.1",
     "react-native-coreml": "^1.2.0",
     "react-native-fs": "^2.11.15",
-    "react-native-identifier": "^0.4.4",
+    "react-native-identifier": "^0.4.5",
     "react-native-swift": "^1.2.1",
     "react-native-vision": "https://github.com/rhdeck/react-native-vision"
   },
