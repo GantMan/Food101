@@ -22,7 +22,7 @@ export default class App extends Component {
     // switch to async/await style
     ;(async () => {
       downloadedModel = await fetchModel("Food101")
-      this.setState({ classifier: downloadedModel })
+      this.setState({ classifier: `file://${downloadedModel}` })
     })()
   }
 
