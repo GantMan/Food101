@@ -10,26 +10,25 @@ import React, { Component } from "react"
 import { StyleSheet, Text, View, SafeAreaView } from "react-native"
 import { VisionCamera } from "react-native-vision"
 
-export default class App extends Component {
-  render() {
-    return (
-      <SafeAreaView style={styles.container}>
-        <Text style={styles.welcome}>Food 101</Text>
-        <Text style={styles.explainer}>Point the camera at some food!</Text>
-        <VisionCamera style={styles.camera} classifier="Food101">
-          {({ classification: [{ label, confidence } = {}] = [] }) => (
-            <Text style={{ fontSize: 20, position: "absolute" }}>
-              {label + " :" + (confidence * 100).toFixed(0) + "%"}
-            </Text>
-          )}
-        </VisionCamera>
-      </SafeAreaView>
-    )
-  }
-}
+export default () =>
+ (
+  <SafeAreaView style={styles.container}>
+    <Text style={styles.welcome}>Food 101</Text>
+    <Text style={styles.explainer}>Point the camera at some food!</Text>
+    <VisionCamera style={styles.camera} classifier="Food101">
+      {({ classification: [{ label, confidence } = {}] = [] }) => (
+        <Text style={styles.foodBlock}>
+          {label + " :" + (confidence * 100).toFixed(0) + "%"}
+        </Text>
+      )}
+    </VisionCamera>
+  </SafeAreaView>
+)
+
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     justifyContent: "center",
     backgroundColor: "#F5FCFF",
   },
@@ -52,11 +51,10 @@ const styles = StyleSheet.create({
   },
   camera: {
     flex: 1,
-    minHeight: 30,
     borderWidth: 2,
     borderColor: "#fee",
     backgroundColor: "#111",
-    // overflow: "hidden",
+    overflow: "hidden",
   },
   cameraContainer: {
     height: "80%",
