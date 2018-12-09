@@ -8,31 +8,20 @@
 
 import React, { Component } from "react"
 import { StyleSheet, Text, View, SafeAreaView } from "react-native"
-import fetchModel from "./fetchModel"
 import { VisionCamera } from "react-native-vision"
 
-let downloadedModel
-
 export default class App extends Component {
-  state = {
-    classifier: null,
-  }
-
-  componentDidMount() {
-    // switch to async/await style
-    ;(async () => {
-      downloadedModel = await fetchModel("Food101")
-      this.setState({ classifier: `file://${downloadedModel}` })
-    })()
-  }
-
   render() {
     return (
       <SafeAreaView style={styles.container}>
         <Text style={styles.welcome}>Food 101</Text>
         <Text style={styles.explainer}>Point the camera at some food!</Text>
-        <VisionCamera style={{ flex: 1 }} classifier={this.state.classifier}>
-          {() => <Text style={{ fontSize: 20, position: "absolute" }}>hi</Text>}
+        <VisionCamera style={styles.camera} classifier="Food101">
+          {({ classification: [{ label, confidence } = {}] = [] }) => (
+            <Text style={{ fontSize: 20, position: "absolute" }}>
+              {label + " :" + (confidence * 100).toFixed(0) + "%"}
+            </Text>
+          )}
         </VisionCamera>
       </SafeAreaView>
     )
@@ -63,10 +52,11 @@ const styles = StyleSheet.create({
   },
   camera: {
     flex: 1,
+    minHeight: 30,
     borderWidth: 2,
     borderColor: "#fee",
     backgroundColor: "#111",
-    overflow: "hidden",
+    // overflow: "hidden",
   },
   cameraContainer: {
     height: "80%",
