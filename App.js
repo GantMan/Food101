@@ -6,54 +6,29 @@
  * @flow
  */
 
-import React, { Component } from "react"
-import { StyleSheet, Text, View, SafeAreaView } from "react-native"
-import fetchModel from "./fetchModel"
-import { RNVCameraView, RNVisionProvider, RNVDefaultRegion } from "react-native-vision"
+import React from "react"
+import { StyleSheet, Text, SafeAreaView } from "react-native"
+import { VisionCamera } from "react-native-vision"
 
-let downloadedModel
+export default () =>
+ (
+  <SafeAreaView style={styles.container}>
+    <Text style={styles.welcome}>Food 101</Text>
+    <Text style={styles.explainer}>Point the camera at some food!</Text>
+    <VisionCamera style={styles.camera} classifier="Food101">
+      {({ label, confidence }) => (
+        <Text style={styles.foodBlock}>
+          {label + " :" + (confidence * 100).toFixed(0) + "%"}
+        </Text>
+      )}
+    </VisionCamera>
+  </SafeAreaView>
+)
 
-export default class App extends Component {
-  state = {
-    classifier: null,
-  }
-
-  componentDidMount() {
-    // switch to async/await style
-    ;(async () => {
-      downloadedModel = await fetchModel("Food101")
-      this.setState({ classifier: downloadedModel })
-    })()
-  }
-
-  render() {
-    return (
-      <RNVisionProvider isCameraFront={false} isStarted>
-        <RNVDefaultRegion classifiers={[{ url: this.state.classifier, max: 5 }]}>
-          {({ classifications }) => {
-            return (
-              <SafeAreaView style={styles.container}>
-                <Text style={styles.welcome}>Food 101</Text>
-                <Text style={styles.explainer}>Point the camera at some food!</Text>
-                <View style={styles.cameraContainer}>
-                  <RNVCameraView gravity="fill" style={styles.camera} />
-                </View>
-                <Text style={styles.foodBlock}>
-                  {classifications && classifications[this.state.classifier]
-                    ? classifications[this.state.classifier][0].label
-                    : "Loading Model"}
-                </Text>
-              </SafeAreaView>
-            )
-          }}
-        </RNVDefaultRegion>
-      </RNVisionProvider>
-    )
-  }
-}
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     justifyContent: "center",
     backgroundColor: "#F5FCFF",
   },
@@ -80,8 +55,5 @@ const styles = StyleSheet.create({
     borderColor: "#fee",
     backgroundColor: "#111",
     overflow: "hidden",
-  },
-  cameraContainer: {
-    height: "80%",
-  },
+  }
 })
