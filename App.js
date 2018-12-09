@@ -7,21 +7,23 @@
  */
 
 import React from "react"
-import { StyleSheet, Text, SafeAreaView } from "react-native"
-import { VisionCamera } from "react-native-vision"
+import { StyleSheet, Text, SafeAreaView, View } from "react-native"
+import { FaceCamera } from "react-native-vision";
+import { Identifier } from "react-native-identifier";
 
 export default () =>
  (
   <SafeAreaView style={styles.container}>
     <Text style={styles.welcome}>Food 101</Text>
     <Text style={styles.explainer}>Point the camera at some food!</Text>
-    <VisionCamera style={styles.camera} classifier="Food101">
-      {({ label, confidence }) => (
-        <Text style={styles.foodBlock}>
-          {label + " :" + (confidence * 100).toFixed(0) + "%"}
-        </Text>
-      )}
-    </VisionCamera>
+    <FaceCamera style={{ flex: 1 }} classifier="MegaNic50">
+    {({ face, faceConfidence, style }) =>
+      face &&
+      (face == "nic" ? (
+        <Identifier style={{ ...style }} accuracy={faceConfidence} />
+      ) : null)
+    }
+  </FaceCamera>
   </SafeAreaView>
 )
 
