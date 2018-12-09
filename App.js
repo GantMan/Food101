@@ -9,7 +9,7 @@
 import React, { Component } from "react"
 import { StyleSheet, Text, View, SafeAreaView } from "react-native"
 import fetchModel from "./fetchModel"
-import { RNVCameraView, RNVisionProvider, RNVDefaultRegion } from "react-native-vision"
+import { VisionCamera } from "react-native-vision"
 
 let downloadedModel
 
@@ -28,26 +28,13 @@ export default class App extends Component {
 
   render() {
     return (
-      <RNVisionProvider isCameraFront={false} isStarted>
-        <RNVDefaultRegion classifiers={[{ url: this.state.classifier, max: 5 }]}>
-          {({ classifications }) => {
-            return (
-              <SafeAreaView style={styles.container}>
-                <Text style={styles.welcome}>Food 101</Text>
-                <Text style={styles.explainer}>Point the camera at some food!</Text>
-                <View style={styles.cameraContainer}>
-                  <RNVCameraView gravity="fill" style={styles.camera} />
-                </View>
-                <Text style={styles.foodBlock}>
-                  {classifications && classifications[this.state.classifier]
-                    ? classifications[this.state.classifier][0].label
-                    : "Loading Model"}
-                </Text>
-              </SafeAreaView>
-            )
-          }}
-        </RNVDefaultRegion>
-      </RNVisionProvider>
+      <SafeAreaView style={styles.container}>
+        <Text style={styles.welcome}>Food 101</Text>
+        <Text style={styles.explainer}>Point the camera at some food!</Text>
+        <VisionCamera style={{ flex: 1 }} classifier={this.state.classifier}>
+          {() => <Text style={{ fontSize: 20, position: "absolute" }}>hi</Text>}
+        </VisionCamera>
+      </SafeAreaView>
     )
   }
 }
