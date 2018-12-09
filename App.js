@@ -55,8 +55,5 @@ const styles = StyleSheet.create({
     borderColor: "#fee",
     backgroundColor: "#111",
     overflow: "hidden",
-  },
-  cameraContainer: {
-    height: "80%",
-  },
+  }
 })

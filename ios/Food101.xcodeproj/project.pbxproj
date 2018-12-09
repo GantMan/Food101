@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -24,9 +23,7 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		386A3EAE21BD777C0085EAD9 /* Food101.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = 386A3E8421BD777C0085EAD9 /* Food101.mlmodelc */; };
 		38E4461F212F49130043680D /* RNPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB97FFDF16A84D7CBD838B8D /* RNPlaceholder.swift */; };
-		3AC18915FBA8495F8ADE431F /* libreact-native-coreml.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A005C167672F4D37BDE38657 /* libreact-native-coreml.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
-		77570C28FC4C4984B54E62F8 /* libRNFS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72298E1194554CD1BF64B388 /* libRNFS.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		C9AC5D3D6FCD47149305C588 /* RNPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB97FFDF16A84D7CBD838B8D /* RNPlaceholder.swift */; };
@@ -173,27 +170,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 9936F32F1F5F2E5B0010BF04;
 			remoteInfo = "privatedata-tvOS";
-		};
-		3809BDCA212F493C00A59C9F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 171040FF2BAD4D20A4575717 /* react-native-coreml.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 719BBC361F8957740028B47D;
-			remoteInfo = "react-native-coreml";
-		};
-		3809BDDE212F493C00A59C9F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AE568020D6542D382EF1D6B /* RNFS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F12AFB9B1ADAF8F800E0535D;
-			remoteInfo = RNFS;
-		};
-		3809BDE0212F493C00A59C9F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AE568020D6542D382EF1D6B /* RNFS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6456441F1EB8DA9100672408;
-			remoteInfo = "RNFS-tvOS";
 		};
 		3826FF41212F495500E8B3A1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -350,16 +326,12 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Food101/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Food101/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
-		171040FF2BAD4D20A4575717 /* react-native-coreml.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = "react-native-coreml.xcodeproj"; path = "../node_modules/react-native-coreml/ios/react-native-coreml.xcodeproj"; sourceTree = "<group>"; };
-		1AE568020D6542D382EF1D6B /* RNFS.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFS.xcodeproj; path = "../node_modules/react-native-fs/RNFS.xcodeproj"; sourceTree = "<group>"; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		386A3E8421BD777C0085EAD9 /* Food101.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Food101.mlmodelc; path = ../Food101.mlmodelc; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
-		72298E1194554CD1BF64B388 /* libRNFS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFS.a; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		84BD933117E64A0E9B012B68 /* libRHDVision.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRHDVision.a; sourceTree = "<group>"; };
-		A005C167672F4D37BDE38657 /* libreact-native-coreml.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libreact-native-coreml.a"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		B8D3A209DDE145BA8F8F4D83 /* RHDVision.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RHDVision.xcodeproj; path = "../node_modules/react-native-vision/ios/RHDVision.xcodeproj"; sourceTree = "<group>"; };
 		EB97FFDF16A84D7CBD838B8D /* RNPlaceholder.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; path = RNPlaceholder.swift; sourceTree = "<group>"; };
@@ -391,8 +363,6 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				3AC18915FBA8495F8ADE431F /* libreact-native-coreml.a in Frameworks */,
-				77570C28FC4C4984B54E62F8 /* libRNFS.a in Frameworks */,
 				E9601535FA3C43C6995345D7 /* libRHDVision.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,23 +494,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3809BDB0212F493C00A59C9F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3809BDCB212F493C00A59C9F /* libreact-native-coreml.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		3809BDB2212F493C00A59C9F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3809BDDF212F493C00A59C9F /* libRNFS.a */,
-				3809BDE1212F493C00A59C9F /* libRNFS.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		3826FF18212F495400E8B3A1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -594,8 +547,6 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				171040FF2BAD4D20A4575717 /* react-native-coreml.xcodeproj */,
-				1AE568020D6542D382EF1D6B /* RNFS.xcodeproj */,
 				B8D3A209DDE145BA8F8F4D83 /* RHDVision.xcodeproj */,
 			);
 			name = Libraries;
@@ -760,20 +711,12 @@
 					ProjectRef = 139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */;
 				},
 				{
-					ProductGroup = 3809BDB0212F493C00A59C9F /* Products */;
-					ProjectRef = 171040FF2BAD4D20A4575717 /* react-native-coreml.xcodeproj */;
-				},
-				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
 					ProductGroup = 3826FF18212F495400E8B3A1 /* Products */;
 					ProjectRef = B8D3A209DDE145BA8F8F4D83 /* RHDVision.xcodeproj */;
-				},
-				{
-					ProductGroup = 3809BDB2212F493C00A59C9F /* Products */;
-					ProjectRef = 1AE568020D6542D382EF1D6B /* RNFS.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -923,20 +866,6 @@
 			fileType = archive.ar;
 			path = "libreact-native-coreml.a";
 			remoteRef = 3809BDCA212F493C00A59C9F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3809BDDF212F493C00A59C9F /* libRNFS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNFS.a;
-			remoteRef = 3809BDDE212F493C00A59C9F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3809BDE1212F493C00A59C9F /* libRNFS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNFS.a;
-			remoteRef = 3809BDE0212F493C00A59C9F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		3826FF42212F495500E8B3A1 /* libRHDVision.a */ = {
@@ -1167,8 +1096,6 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-coreml/ios",
-					"$(SRCROOT)/../node_modules/react-native-fs/**",
 					"$(SRCROOT)/../node_modules/react-native-vision/ios/RHDVision",
 				);
 				INFOPLIST_FILE = Food101Tests/Info.plist;
@@ -1176,9 +1103,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1201,8 +1125,6 @@
 				DEVELOPMENT_TEAM = 3QU6YMZ4LC;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-coreml/ios",
-					"$(SRCROOT)/../node_modules/react-native-fs/**",
 					"$(SRCROOT)/../node_modules/react-native-vision/ios/RHDVision",
 				);
 				INFOPLIST_FILE = Food101Tests/Info.plist;
@@ -1210,9 +1132,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1236,8 +1155,6 @@
 				DEVELOPMENT_TEAM = 3QU6YMZ4LC;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-coreml/ios",
-					"$(SRCROOT)/../node_modules/react-native-fs/**",
 					"$(SRCROOT)/../node_modules/react-native-vision/ios/RHDVision",
 				);
 				INFOPLIST_FILE = Food101/Info.plist;
@@ -1264,8 +1181,6 @@
 				DEVELOPMENT_TEAM = 3QU6YMZ4LC;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-coreml/ios",
-					"$(SRCROOT)/../node_modules/react-native-fs/**",
 					"$(SRCROOT)/../node_modules/react-native-vision/ios/RHDVision",
 				);
 				INFOPLIST_FILE = Food101/Info.plist;
