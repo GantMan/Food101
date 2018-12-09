@@ -6,8 +6,8 @@
  * @flow
  */
 
-import React, { Component } from "react"
-import { StyleSheet, Text, View, SafeAreaView } from "react-native"
+import React from "react"
+import { StyleSheet, Text, SafeAreaView } from "react-native"
 import { VisionCamera } from "react-native-vision"
 
 export default () =>
