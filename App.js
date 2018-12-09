@@ -16,7 +16,7 @@ export default () =>
     <Text style={styles.welcome}>Food 101</Text>
     <Text style={styles.explainer}>Point the camera at some food!</Text>
     <VisionCamera style={styles.camera} classifier="Food101">
-      {({ classification: [{ label, confidence } = {}] = [] }) => (
+      {({ label, confidence }) => (
         <Text style={styles.foodBlock}>
           {label + " :" + (confidence * 100).toFixed(0) + "%"}
         </Text>
